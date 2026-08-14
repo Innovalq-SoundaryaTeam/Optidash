@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Optics | OptiDash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#96712F', darkBg: '#050b14' } } }
+        }
+    </script>
+</head>
+<body class="bg-[#f8fafc] text-gray-800 dark:bg-darkBg dark:text-gray-200 antialiased overflow-x-hidden">
+
+    <nav class="w-full bg-white dark:bg-[#0a101d] border-b border-gray-200 dark:border-gray-800 py-4">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-glasses text-xl"></i>
+                </div>
+                <span class="text-2xl font-black text-gray-900 dark:text-white">OptiDash</span>
+            </a>
+            <a href="index.html" class="font-bold text-gray-600 dark:text-gray-300 hover:text-primary">Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="py-24 max-w-4xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <div class="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-500 text-4xl mx-auto mb-6">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h1 class="text-5xl font-extrabold text-gray-900 dark:text-white mb-6">Custom Optics</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 font-medium">Lenses crafted from index-matched polymers.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-[#111827] rounded-3xl p-10 shadow-xl border border-gray-100 dark:border-gray-800">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Precision Engineering</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                The frame makes the statement, but the lens creates the vision. We partner directly with Zeiss and Essilor to cut lenses that are microscopically aligned to your pupillary distance. We offer ultra-high index thinning, making even the strongest prescriptions look elegant.
+            </p>
+            <ul class="space-y-4 font-medium mb-10">
+                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Hydrophobic & Oleophobic dirt-repelling coatings</li>
+                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> True-Color Blue Light blocking technology</li>
+                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> High-Index ultra-thin profiles for complex prescriptions</li>
+            </ul>
+            <a href="pricing.html" class="inline-block bg-amber-500 text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-amber-400 transition-colors shadow-lg">View Lens Pricing</a>
+        </div>
+    </section>
+
+</body>
+</html>

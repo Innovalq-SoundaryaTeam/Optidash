@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>OptiDash | Secure Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#96712F', darkBg: '#050b14' } } }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-[#f8fafc] text-gray-800 dark:bg-darkBg dark:text-gray-200 antialiased font-sans transition-colors duration-300">
+
+    <!-- Top Right Success Toast Notification -->
+    <div id="toast-success"
+        class="fixed top-5 right-5 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-x-full opacity-0 transition-all duration-500 z-50 flex items-center gap-3 font-bold">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span>Order placed successfully!</span>
+    </div>
+
+    <!-- Simple Secure Header -->
+    <header class="w-full bg-white dark:bg-[#0a101d] border-b border-gray-200 dark:border-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-gradient-to-tr from-gray-900 to-gray-600 dark:from-primary dark:to-yellow-600 text-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-glasses text-lg"></i>
+                </div>
+                <span class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">OptiDash</span>
+            </a>
+            <div class="flex items-center gap-6">
+                <div class="text-gray-500 dark:text-gray-400 font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-primary"></i> Secure Checkout
+                </div>
+                <button
+                    class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <i class="fa-solid fa-moon text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-32">
+        <div class="grid lg:grid-cols-12 gap-12">
+
+            <!-- LEFT: CHECKOUT FORM -->
+            <div class="lg:col-span-7">
+                <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-6">Contact Information</h2>
+                <div
+                    class="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 mb-8">
+                    <input type="email" placeholder="Email Address"
+                        class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                </div>
+
+                <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-6">Shipping Address</h2>
+                <div
+                    class="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 mb-8 grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="First Name"
+                        class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    <input type="text" placeholder="Last Name"
+                        class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    <input type="text" placeholder="Address"
+                        class="col-span-2 w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    <input type="text" placeholder="City"
+                        class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="State"
+                            class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                        <input type="text" placeholder="ZIP Code"
+                            class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-6">Payment Method</h2>
+                <div
+                    class="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 mb-8">
+
+                    <!-- Credit / Debit Card Option -->
+                    <div id="card-container" onclick="document.getElementById('pay-card').click()"
+                        class="border-2 border-primary bg-primary/5 dark:bg-primary/10 p-4 rounded-xl mb-4 flex items-center justify-between cursor-pointer transition-colors">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" id="pay-card" checked name="payment" onchange="togglePaymentMethod()"
+                                class="w-4 h-4 text-primary bg-transparent focus:ring-primary accent-primary cursor-pointer">
+                            <span class="font-bold text-gray-900 dark:text-white">Credit / Debit Card</span>
+                        </div>
+                        <div class="flex gap-2 text-3xl">
+                            <i class="fa-brands fa-cc-visa text-blue-700 dark:text-blue-400"></i>
+                            <i class="fa-brands fa-cc-mastercard text-red-500"></i>
+                            <i class="fa-brands fa-cc-amex text-blue-500 dark:text-blue-300"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card Details Fields -->
+                    <div id="card-details" class="space-y-4 mb-6 transition-all">
+                        <input type="text" placeholder="Card Number (0000 0000 0000 0000)"
+                            class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Expiry (MM / YY)"
+                                class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                            <input type="text" placeholder="Security Code (CVC)"
+                                class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                        </div>
+                        <input type="text" placeholder="Name on Card"
+                            class="w-full bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 outline-none focus:border-primary font-medium transition-colors">
+                    </div>
+
+                    <!-- Cash on Delivery Option -->
+                    <div id="cod-container" onclick="document.getElementById('pay-cod').click()"
+                        class="border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl flex items-center justify-between cursor-pointer transition-colors">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" id="pay-cod" name="payment" onchange="togglePaymentMethod()"
+                                class="w-4 h-4 text-primary bg-transparent focus:ring-primary accent-primary cursor-pointer">
+                            <span class="font-bold text-gray-900 dark:text-white">Cash on Delivery (COD)</span>
+                        </div>
+                        <div class="flex gap-2 text-2xl text-green-600 dark:text-green-500">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT: ORDER SUMMARY (DYNAMICALLY GENERATED) -->
+            <div class="lg:col-span-5">
+                <div
+                    class="bg-white dark:bg-[#111827] p-8 rounded-[2rem] shadow-xl border border-gray-100 dark:border-gray-800 sticky top-10">
+                    <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-6">Order Summary</h2>
+
+                    <!-- DYNAMIC CART ITEMS INJECTED HERE -->
+                    <div id="checkoutItems" class="space-y-4 mb-6 border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <!-- Javascript loads elements here -->
+                    </div>
+
+                    <!-- TOTALS CALCULATION -->
+                    <div class="space-y-3 mb-8 text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span id="chkSubtotal" class="font-bold text-gray-900 dark:text-white">$0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Shipping</span>
+                            <span
+                                class="text-green-600 dark:text-green-400 font-bold uppercase tracking-wider text-xs flex items-center">Free
+                                Express</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Estimated Tax (8%)</span>
+                            <span id="chkTax" class="font-bold text-gray-900 dark:text-white">$0.00</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700 mt-2">
+                            <span class="text-lg font-bold text-gray-900 dark:text-white">Total</span>
+                            <span id="chkTotal"
+                                class="text-3xl font-black text-gray-900 dark:text-white drop-shadow-sm">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- PAY BUTTON -->
+                    <button onclick="processOrder()"
+                        class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-primary dark:hover:bg-primary dark:hover:text-white py-4 rounded-xl font-bold text-lg shadow-xl transition-all hover:-translate-y-1">
+                        Pay & Complete Order
+                    </button>
+
+                    <p class="text-center text-xs text-gray-400 dark:text-gray-500 font-medium mt-4">
+                        <i class="fa-solid fa-shield-halved"></i> Payments are 100% secure & encrypted.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT TO LOAD CART ITEMS AND CALCULATE TOTALS -->
+    <script>
+        // Centralized function to render the cart and calculations
+        function renderCart() {
+            const cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            const container = document.getElementById('checkoutItems');
+            let subtotal = 0;
+
+            // Clear existing HTML
+            container.innerHTML = '';
+
+            if (cartArray.length === 0) {
+                container.innerHTML = `<p class="text-gray-500 dark:text-gray-400 italic text-center py-4">Your cart is currently empty. <br><a href="home-2.html" class="text-primary font-bold hover:underline mt-2 inline-block">Return to Shop</a></p>`;
+            } else {
+                cartArray.forEach((item, index) => {
+                    subtotal += item.price;
+                    container.innerHTML += `
+                        <div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-800/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700 relative group">
+                            <div class="w-16 h-16 bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
+                                <img src="${item.image}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1 pr-4">
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm line-clamp-1">${item.name}</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs mt-1">Standard Lenses</p>
+                            </div>
+                            <div class="flex flex-col items-end gap-1">
+                                <span class="font-black text-gray-900 dark:text-white">$${item.price.toFixed(2)}</span>
+                                <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 text-xs font-bold transition-colors">
+                                    <i class="fa-solid fa-trash-can"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Calculate 8% tax
+            const tax = subtotal * 0.08;
+            const finalTotal = subtotal + tax;
+
+            // Inject into HTML
+            document.getElementById('chkSubtotal').innerText = '$' + subtotal.toFixed(2);
+            document.getElementById('chkTax').innerText = '$' + tax.toFixed(2);
+            document.getElementById('chkTotal').innerText = '$' + finalTotal.toFixed(2);
+        }
+
+        // Function to remove item
+        function removeItem(index) {
+            let cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            cartArray.splice(index, 1); // Remove 1 item at the specific index
+            localStorage.setItem('optidash_cart', JSON.stringify(cartArray));
+            renderCart(); // Re-render the cart UI
+        }
+
+        // Initial render on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+        });
+
+        // Toggle Payment Method Visuals
+        function togglePaymentMethod() {
+            const isCard = document.getElementById('pay-card').checked;
+            const cardDetails = document.getElementById('card-details');
+            const cardContainer = document.getElementById('card-container');
+            const codContainer = document.getElementById('cod-container');
+
+            if (isCard) {
+                cardDetails.style.display = 'block';
+
+                cardContainer.classList.add('border-primary', 'bg-primary/5', 'dark:bg-primary/10');
+                cardContainer.classList.remove('border-transparent', 'bg-gray-50', 'dark:bg-gray-800/50');
+
+                codContainer.classList.remove('border-primary', 'bg-primary/5', 'dark:bg-primary/10');
+                codContainer.classList.add('border-transparent', 'bg-gray-50', 'dark:bg-gray-800/50');
+            } else {
+                cardDetails.style.display = 'none';
+
+                codContainer.classList.add('border-primary', 'bg-primary/5', 'dark:bg-primary/10');
+                codContainer.classList.remove('border-transparent', 'bg-gray-50', 'dark:bg-gray-800/50');
+
+                cardContainer.classList.remove('border-primary', 'bg-primary/5', 'dark:bg-primary/10');
+                cardContainer.classList.add('border-transparent', 'bg-gray-50', 'dark:bg-gray-800/50');
+            }
+        }
+
+        // Process Order with Top-Right Toast Notification
+        function processOrder() {
+            const cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            if (cartArray.length === 0) {
+                alert("Your cart is empty! Add items before checkout.");
+                window.location.href = 'home-2.html';
+                return;
+            }
+
+            // Show custom toast popup on the top right
+            const toast = document.getElementById('toast-success');
+            toast.classList.remove('translate-x-full', 'opacity-0');
+
+            // Wait a few seconds to let user read it, then clear cart and redirect
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+                localStorage.removeItem('optidash_cart');
+                window.location.href = 'index.html';
+            }, 2500);
+        }
+
+        // Handle Theme Toggle for this page
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

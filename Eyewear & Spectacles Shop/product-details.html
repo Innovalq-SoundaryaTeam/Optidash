@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>OptiDash | Product Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="premium.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#96712F', darkBg: '#050b14', darkCard: '#0a101d' },
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'], serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#f8fafc] text-gray-800 dark:bg-darkBg dark:text-gray-200 antialiased transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav
+        class="w-full bg-white dark:bg-[#0a101d] border-b border-gray-200 dark:border-gray-800 py-3 sm:py-4 shadow-sm transition-colors duration-300 relative z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+                <div
+                    class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-glasses text-lg sm:text-xl"></i>
+                </div>
+                <span
+                    class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white tracking-tight">OptiDash</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 items-center font-bold text-gray-700 dark:text-gray-300">
+                <a href="index.html" class="hover:text-primary transition-colors whitespace-nowrap">Home</a>
+                <a href="about.html" class="hover:text-primary transition-colors whitespace-nowrap">About Us</a>
+                <a href="services.html" class="hover:text-primary transition-colors whitespace-nowrap">Services</a>
+                <a href="pricing.html" class="hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
+                <a href="blog.html" class="hover:text-primary transition-colors whitespace-nowrap">Blog</a>
+                <a href="contact.html" class="hover:text-primary transition-colors whitespace-nowrap">Contact Us</a>
+            </div>
+
+            <!-- Right Side Controls -->
+            <div class="flex gap-2 sm:gap-4 items-center flex-shrink-0">
+                <!-- Theme Toggle -->
+                <button
+                    class="theme-toggle w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
+                    <i class="fa-solid fa-moon text-sm sm:text-lg"></i>
+                </button>
+
+                <!-- Cart Button (Hides text on mobile) -->
+                <button onclick="window.location.href='checkout.html'"
+                    class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 hover:bg-primary dark:hover:bg-primary transition-colors hover:scale-105 flex-shrink-0">
+                    <i class="fa-solid fa-cart-shopping text-sm sm:text-base"></i>
+                    <span class="hidden sm:inline">Cart</span> (<span id="detailsCartCount">0</span>)
+                </button>
+
+                <!-- Mobile Hamburger Menu Button -->
+                <button onclick="document.getElementById('mobileNavDropdown').classList.toggle('hidden');"
+                    class="md:hidden text-gray-900 dark:text-white text-xl sm:text-2xl p-1 ml-1 focus:outline-none flex-shrink-0">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileNavDropdown"
+            class="md:hidden hidden absolute w-full left-0 top-full bg-white dark:bg-[#0a101d] border-b border-gray-200 dark:border-gray-800 shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
+            <div class="flex flex-col p-4 gap-2">
+                <a href="index.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
+                <a href="about.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About
+                    Us</a>
+                <a href="services.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                <a href="pricing.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Pricing</a>
+                <a href="blog.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Blog</a>
+                <a href="contact.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-32">
+        <!-- BREADCRUMBS -->
+        <p class="text-xs text-gray-500 font-bold mb-8 tracking-widest uppercase">
+            Home / Shop / <span id="breadcrumbName" class="text-gray-900 dark:text-white">Loading...</span>
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+            <!-- LEFT: PRODUCT IMAGES -->
+            <div>
+                <div
+                    class="relative bg-gray-100 dark:bg-[#111827] rounded-3xl h-[500px] overflow-hidden shadow-md mb-4 border border-gray-200 dark:border-gray-800">
+                    <span
+                        class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">Bestseller</span>
+                    <img id="mainProductImage"
+                        src="https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg" alt="Product"
+                        class="w-full h-full object-cover">
+                </div>
+                <!-- Thumbnails matching the screenshot -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        class="h-20 bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border-2 border-primary cursor-pointer shadow-sm">
+                        <img id="thumb1" src="https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="h-20 bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border border-transparent cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="h-20 bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border border-transparent cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?auto=format&fit=crop&w=200&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="h-20 bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden border border-transparent cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1582142407894-ec85a1260a46?auto=format&fit=crop&w=200&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: PRODUCT DETAILS -->
+            <div class="flex flex-col pt-4">
+                <h1 id="mainProductTitle"
+                    class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-2 font-serif">Loading...
+                </h1>
+
+                <div class="flex items-center gap-2 mb-6 text-amber-500 text-sm drop-shadow-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span class="text-gray-500 font-bold">(128 Reviews)</span>
+                </div>
+
+                <p id="mainProductPrice" class="text-3xl font-black text-gray-900 dark:text-white mb-6">$0.00</p>
+
+                <p class="text-gray-600 dark:text-gray-400 font-medium mb-8 leading-relaxed">
+                    The timeless silhouette refined for the modern era. Crafted from aerospace-grade materials,
+                    featuring scratch-resistant polarized lenses that provide 100% UV protection without compromising
+                    clarity.
+                </p>
+
+                <!-- Color Options -->
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-3">Color:
+                        <span class="text-gray-500 font-normal">Gold / Tortoise</span>
+                    </p>
+                    <div class="flex gap-3">
+                        <button
+                            class="w-8 h-8 rounded-full bg-[#cda53f] border-2 border-white dark:border-[#0a101d] shadow-[0_0_0_2px_#cda53f]"></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:scale-110 transition-transform"></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-[#dbe6f0] border-2 border-transparent hover:scale-110 transition-transform"></button>
+                    </div>
+                </div>
+
+                <!-- Lens Dropdown -->
+                <div class="mb-8">
+                    <p class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-3">Lens Type
+                    </p>
+                    <div
+                        class="w-full border border-gray-300 dark:border-gray-700 rounded-xl px-4 py-3 bg-white dark:bg-[#111827] flex justify-between items-center cursor-pointer font-medium text-gray-800 dark:text-gray-200 shadow-sm">
+                        <span>Standard Sun Lenses (Included)</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Add to cart -->
+                <div class="flex gap-4 mb-6">
+                    <div
+                        class="flex items-center justify-between border border-gray-300 dark:border-gray-700 rounded-full px-5 py-3 w-32 bg-white dark:bg-[#111827] text-gray-900 dark:text-white">
+                        <button id="btnMinus"
+                            class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"><i
+                                class="fa-solid fa-minus text-xs"></i></button>
+                        <span id="quantityDisplay" class="font-bold">1</span>
+                        <button id="btnPlus"
+                            class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"><i
+                                class="fa-solid fa-plus text-xs"></i></button>
+                    </div>
+                    <button onclick="addCurrentToCart()"
+                        class="flex-1 bg-primary hover:bg-[#7a5a26] text-white rounded-full font-bold shadow-lg hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-sm"></i> Add to Cart
+                    </button>
+                </div>
+
+                <button
+                    class="w-full border border-gray-300 dark:border-gray-700 rounded-full py-4 font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mb-10 bg-white dark:bg-[#111827] shadow-sm">
+                    <i class="fa-solid fa-camera"></i> Try On Virtually
+                </button>
+
+                <!-- Accordion -->
+                <div class="border-t border-gray-200 dark:border-gray-800">
+                    <div
+                        class="py-4 flex justify-between items-center cursor-pointer font-bold text-gray-900 dark:text-white hover:text-primary transition-colors">
+                        Product Specifications <i class="fa-solid fa-chevron-up text-gray-400 text-sm"></i>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm pb-4 leading-relaxed font-medium">
+                        Frame width: 140mm | Lens width: 54mm | Bridge: 18mm.<br>
+                        Material: Aerospace-grade Titanium & Mazzucchelli Acetate.<br>
+                        Hinges: Patented micro-flex technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DYNAMIC DATA AND CART SCRIPT -->
+    <script>
+        // Global quantity variable
+        let currentQuantity = 1;
+
+        // Update cart counter on load
+        function updateDetailsCartCount() {
+            let cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            document.getElementById('detailsCartCount').innerText = cartArray.length;
+        }
+
+        // Read local storage to dynamically update the product page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDetailsCartCount();
+
+            const productJSON = localStorage.getItem('optidash_current_product');
+            if (productJSON) {
+                const product = JSON.parse(productJSON);
+
+                // Update elements with the clicked data
+                document.getElementById('mainProductImage').src = product.image;
+                document.getElementById('thumb1').src = product.image;
+
+                document.getElementById('mainProductTitle').innerText = product.name;
+                document.getElementById('breadcrumbName').innerText = product.name;
+
+                // Set price
+                document.getElementById('mainProductPrice').innerText = '$' + product.price.toFixed(2);
+            } else {
+                // Fallback text if page is accessed directly without clicking a product
+                document.getElementById('mainProductTitle').innerText = "The Aviator Classic";
+                document.getElementById('mainProductPrice').innerText = "$145.00";
+            }
+
+            // Quantity Increment/Decrement Logic
+            const btnPlus = document.getElementById('btnPlus');
+            const btnMinus = document.getElementById('btnMinus');
+            const quantityDisplay = document.getElementById('quantityDisplay');
+
+            btnPlus.addEventListener('click', () => {
+                currentQuantity++;
+                quantityDisplay.innerText = currentQuantity;
+            });
+
+            btnMinus.addEventListener('click', () => {
+                if (currentQuantity > 1) {
+                    currentQuantity--;
+                    quantityDisplay.innerText = currentQuantity;
+                }
+            });
+        });
+
+        // Add this specific product to checkout cart
+        function addCurrentToCart() {
+            let cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+
+            const title = document.getElementById('mainProductTitle').innerText;
+            const priceText = document.getElementById('mainProductPrice').innerText.replace('$', '');
+            const img = document.getElementById('mainProductImage').src;
+
+            // Add the item to the cart array based on the selected quantity
+            for (let i = 0; i < currentQuantity; i++) {
+                cartArray.push({ name: title, price: parseFloat(priceText), image: img });
+            }
+
+            localStorage.setItem('optidash_cart', JSON.stringify(cartArray));
+
+            updateDetailsCartCount();
+            alert(currentQuantity + ' ' + title + '(s) added to your cart! Proceeding to checkout.');
+            window.location.href = 'checkout.html';
+        }
+
+        // Handle Theme Toggle for this page
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

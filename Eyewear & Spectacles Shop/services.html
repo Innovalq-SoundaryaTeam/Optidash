@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>Our Services | OptiDash Luxury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="premium.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: '#96712F', darkBg: '#050b14', darkCard: '#0a101d' } }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-[#f8fafc] text-gray-800 dark:bg-darkBg dark:text-gray-200 font-sans antialiased transition-colors duration-300 overflow-x-hidden relative">
+
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-20 pointer-events-none">
+        <div
+            class="absolute top-[30%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 dark:bg-blue-900/10 blur-[120px]">
+        </div>
+    </div>
+
+    <!-- UNIVERSAL NAVBAR -->
+    <nav
+        class="fixed
+w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo Link -->
+                <a href="index.html" class="flex items-center group cursor-pointer flex-shrink-0">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center mr-3 shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-glasses text-xl"></i>
+                    </div>
+                    <span
+                        class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white group-hover:opacity-80 transition-opacity">OptiDash</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold">
+                            Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 opacity-70"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-56 bg-white dark:bg-[#0f172a] rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-3 z-50 shadow-2xl border border-gray-100 dark:border-gray-800">
+                            <a href="index.html"
+                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
+                                1 (Ultra Luxury)</a>
+                            <a href="home-2.html"
+                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mt-1">Home
+                                2 (SaaS Platform)</a>
+                        </div>
+                    </div>
+                    <a href="about.html"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">About
+                        Us</a>
+                    <a href="services.html" class="text-primary font-black transition py-2">Services</a>
+                    <a href="pricing.html"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Pricing</a>
+                    <a href="blog.html"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Blog</a>
+                    <a href="contact.html"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Contact</a>
+
+                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700"></div>
+
+                    <!-- Bulletproof Desktop Toggles -->
+                    <button
+                        onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';"
+                        class="text-xs font-black text-gray-500 hover:text-primary transition-colors tracking-widest uppercase">RTL</button>
+                    <button
+                        onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
+                        class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <i class="fa-solid fa-moon text-lg transition-transform hover:rotate-12"></i>
+                    </button>
+                    <div class="flex items-center gap-2 ml-2">
+                        <a href="login.html"
+                            class="text-gray-800 dark:text-gray-200 font-bold hover:text-primary transition-colors px-3 py-2">
+                            Login
+                        </a>
+                        <a href="signup.html"
+                            class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-transform shadow-lg">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Buttons -->
+                <div class="flex md:hidden items-center gap-3">
+                    <!-- Bulletproof Mobile Theme Toggle -->
+                    <button
+                        onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
+                        class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-moon text-lg"></i>
+                    </button>
+                    <!-- Bulletproof Mobile Menu Toggle -->
+                    <button onclick="document.getElementById('mobileNavDropdown').classList.toggle('hidden');"
+                        class="text-gray-900 dark:text-white text-2xl p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileNavDropdown"
+            class="mobile-menu hidden absolute w-full left-0 top-full mt-2 bg-white dark:bg-[#0a101d] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl z-50 flex flex-col overflow-hidden"
+            style="max-height: calc(100vh - 120px);">
+
+            <!-- Scrollable Links -->
+            <div class="flex-1 overflow-y-auto overscroll-contain flex flex-col p-4 gap-2">
+                <a href="index.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
+                    1 (Ultra Luxury)</a>
+                <a href="home-2.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
+                    2 (Storefront)</a>
+                <a href="about.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About
+                    Us</a>
+                <a href="services.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                <a href="pricing.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Pricing</a>
+                <a href="blog.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Blog</a>
+                <a href="contact.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
+            </div>
+
+            <!-- Sticky Bottom Buttons -->
+            <div class="flex-shrink-0 p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#050b14]">
+                <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';"
+                    class="rtl-toggle w-full text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 py-3 rounded-xl transition-colors hover:text-primary mb-3">
+                    <i class="fa-solid fa-retweet"></i> Toggle RTL
+                </button>
+                <div class="grid grid-cols-2 gap-3 w-full">
+                    <a href="login.html"
+                        class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-center px-4 py-3 rounded-xl font-bold transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm">
+                        Login
+                    </a>
+                    <a href="signup.html"
+                        class="w-full bg-primary text-white text-center px-4 py-3 rounded-xl font-bold shadow-lg transition-colors hover:bg-yellow-600">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div id="mobileNavDropdown"
+            class="hidden absolute w-full left-0 top-full bg-white dark:bg-[#0a101d] border-b border-gray-200 dark:border-gray-800 shadow-2xl z-50">
+            <div class="flex flex-col p-4 gap-2">
+                <a href="index.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">Home
+                    1 (Ultra Luxury)</a>
+                <a href="home-2.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">Home
+                    2 (SaaS Platform)</a>
+                <a href="about.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">About
+                    Us</a>
+                <a href="services.html" class="font-bold text-primary p-3 rounded-xl bg-primary/10">Services</a>
+                <a href="pricing.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">Pricing</a>
+                <a href="blog.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
+                <a href="contact.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+
+                <div class="h-px w-full bg-gray-200 dark:bg-gray-800 my-2"></div>
+
+                <!-- Bulletproof Mobile Buttons -->
+                <!-- Mobile RTL, Login, & Sign Up Buttons -->
+                <div class="flex flex-col gap-3 px-3 py-3 mt-2">
+                    <button
+                        onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';"
+                        class="rtl-toggle w-full text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 py-3 rounded-xl transition-colors hover:text-primary">
+                        <i class="fa-solid fa-retweet"></i> Toggle RTL
+                    </button>
+                    <div class="grid grid-cols-2 gap-3 w-full">
+                        <a href="login.html"
+                            class="w-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-center px-4 py-3 rounded-xl font-bold transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+                            Login
+                        </a>
+                        <a href="signup.html"
+                            class="w-full bg-primary text-white text-center px-4 py-3 rounded-xl font-bold shadow-lg transition-colors hover:bg-yellow-600">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <section
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center justify-center border-b border-gray-200 dark:border-gray-800">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=2000&q=80"
+                alt="Glasses on table"
+                class="w-full h-full object-cover object-center filter brightness-[0.9] dark:brightness-[0.3]">
+            <div class="absolute inset-0 bg-white/70 dark:bg-black/60 backdrop-blur-sm"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight">Our
+                Services.</h1>
+            <p class="text-xl text-gray-700 dark:text-gray-300 font-medium max-w-2xl mx-auto">Comprehensive optical care
+                and styling, delivered with absolute precision.</p>
+        </div>
+    </section>
+
+    <!-- CORE OFFERINGS GRID -->
+    <section class="py-24 relative z-10 bg-gray-50 dark:bg-[#050b14]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">Core Offerings
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl p-10 rounded-[2.5rem] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
+                    <div
+                        class="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-primary rounded-2xl flex items-center justify-center text-2xl mb-8 shadow-sm">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Comprehensive Exams</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">Digital diagnostics to
+                        ensure perfect visual acuity and screen for underlying health conditions.</p>
+                    <a href="service-details.html"
+                        class="inline-flex items-center font-bold text-primary group-hover:gap-3 gap-2 transition-all">View
+                        Details <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl p-10 rounded-[2.5rem] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
+                    <div
+                        class="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-8 shadow-sm">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Frame Styling</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">One-on-one sessions
+                        with our style directors to find the perfect architectural fit for your face.</p>
+                    <a href="service-details.html"
+                        class="inline-flex items-center font-bold text-purple-600 group-hover:gap-3 gap-2 transition-all">View
+                        Details <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl p-10 rounded-[2.5rem] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
+                    <div
+                        class="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 border border-amber-100 dark:border-amber-800 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-8 shadow-sm">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Lens Care</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">Corneal mapping and
+                        specialized fittings for daily, weekly, and astigmatism lenses fit for your face..</p>
+                    <a href="service-details.html"
+                        class="inline-flex items-center font-bold text-amber-600 group-hover:gap-3 gap-2 transition-all">View
+                        Details <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALTY CARE -->
+    <section class="py-24 bg-white dark:bg-[#0a101d] border-y border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-700">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                        alt="Doctor examining patient"
+                        class="relative rounded-[3rem] shadow-2xl object-cover h-[500px] w-full border border-gray-200 dark:border-gray-800">
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">Specialty
+                        Diagnostics.</h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed font-medium">For patients
+                        requiring deeper medical intervention, we offer specialized testing and monitoring programs.</p>
+                    <ul class="space-y-6 mb-10">
+                        <li class="flex items-start">
+                            <div
+                                class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mr-4 text-primary">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Glaucoma Screening</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mt-1">Non-invasive
+                                    intraocular pressure testing.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mr-4 text-primary">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Pediatric Optometry</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mt-1">Gentle, accurate
+                                    exams for children starting at age 4.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mr-4 text-primary">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Dry Eye Therapy</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mt-1">Tear-film analysis
+                                    and restorative medical treatments.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY SHOWCASE -->
+    <section class="py-24 bg-gray-50 dark:bg-[#050b14]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-16">The OptiDash Tech
+                Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Stack 1 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-shadow">
+                    <i
+                        class="fa-solid fa-camera-retro text-4xl text-blue-500 mb-6 bg-blue-50 dark:bg-blue-900/30 p-4 rounded-2xl w-full"></i>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg">Optos Retinal</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">200° ultra-wide digital
+                        mapping.</p>
+                </div>
+                <!-- Stack 2 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-shadow">
+                    <i
+                        class="fa-solid fa-robot text-4xl text-purple-500 mb-6 bg-purple-50 dark:bg-purple-900/30 p-4 rounded-2xl w-full"></i>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg">Edger Pro</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Robotic lens grinding in-house.
+                    </p>
+                </div>
+                <!-- Stack 3 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-shadow">
+                    <i
+                        class="fa-solid fa-laptop-medical text-4xl text-teal-500 mb-6 bg-teal-50 dark:bg-teal-900/30 p-4 rounded-2xl w-full"></i>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg">Auto-Refractor</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Laser-guided prescription
+                        baseline.</p>
+                </div>
+                <!-- Stack 4 -->
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-shadow">
+                    <i
+                        class="fa-solid fa-face-smile text-4xl text-amber-500 mb-6 bg-amber-50 dark:bg-amber-900/30 p-4 rounded-2xl w-full"></i>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg">AR Try-On</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">WebGL face mapping algorithms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PREVIEW CTA -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')] opacity-10">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Transparent Pricing.</h2>
+            <p class="text-xl text-blue-100 mb-10 font-medium">No hidden fees. We believe in clear, upfront pricing for
+                all clinical exams and bespoke frame builds.</p>
+            <a href="pricing.html"
+                class="inline-block bg-white text-primary px-10 py-4 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform">View
+                Service Packages</a>
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="py-24 bg-white dark:bg-[#0a101d]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">Service FAQs</h2>
+            </div>
+            <div class="space-y-6">
+
+                <!-- FAQ Item 1 -->
+                <div onclick="toggleFAQ(this)"
+                    class="bg-gray-50 dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-md p-6 rounded-2xl cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg flex justify-between items-center">
+                        Do I need an appointment for frame styling?
+                        <i class="fa-solid fa-plus text-primary text-sm transition-transform duration-300"></i>
+                    </h4>
+                    <div
+                        class="faq-answer hidden mt-4 text-gray-600 dark:text-gray-400 font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 pt-4">
+                        While walk-ins are always welcome, we highly recommend booking an appointment for our bespoke
+                        frame styling. This ensures you receive dedicated, one-on-one time with our expert stylists to
+                        find your perfect architectural fit.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div onclick="toggleFAQ(this)"
+                    class="bg-gray-50 dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-md p-6 rounded-2xl cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg flex justify-between items-center">
+                        Do you accept out-of-network insurance?
+                        <i class="fa-solid fa-plus text-primary text-sm transition-transform duration-300"></i>
+                    </h4>
+                    <div
+                        class="faq-answer hidden mt-4 text-gray-600 dark:text-gray-400 font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 pt-4">
+                        Yes, we work with most major vision insurance providers. We can provide a detailed, itemized
+                        receipt for you to submit directly to your insurance company for out-of-network reimbursement.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div onclick="toggleFAQ(this)"
+                    class="bg-gray-50 dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-md p-6 rounded-2xl cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg flex justify-between items-center">
+                        How long does it take to get my glasses?
+                        <i class="fa-solid fa-plus text-primary text-sm transition-transform duration-300"></i>
+                    </h4>
+                    <div
+                        class="faq-answer hidden mt-4 text-gray-600 dark:text-gray-400 font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 pt-4">
+                        Since all of our lenses are custom-crafted and index-matched, standard single-vision orders
+                        typically take 5-7 business days. Complex prescriptions or progressive lenses may take 10-14
+                        business days to ensure absolute optical precision.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FAQ Toggle Script -->
+        <script>
+            function toggleFAQ(element) {
+                const answer = element.querySelector('.faq-answer');
+                const icon = element.querySelector('i');
+
+                // Toggle the answer visibility
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                    icon.style.transform = 'rotate(180deg)'; // Smooth rotation
+                } else {
+                    answer.classList.add('hidden');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                    icon.style.transform = 'rotate(0deg)'; // Revert rotation
+                }
+            }
+        </script>
+    </section>
+
+    <!-- ULTRA LUXURY FOOTER -->
+    <footer class="relative pt-32 pb-10 overflow-hidden">
+        <div class="absolute inset-0 bg-gray-900 dark:bg-[#030710] -z-20"></div>
+
+        <div
+            class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/30 rounded-full blur-[120px] -z-10 translate-x-1/2 translate-y-1/2">
+        </div>
+        <div
+            class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[130px] -z-10 -translate-x-1/3 -translate-y-1/3">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Responsive Newsletter Panel -->
+            <div
+                class="glass-panel p-8 md:p-12 rounded-[3rem] border-white/20 mb-16 bg-white/10 dark:bg-white/5 shadow-2xl">
+                <div
+                    class="flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between text-center md:text-left">
+                    <div class="w-full md:w-1/2">
+                        <span class="text-primary font-black text-xs uppercase tracking-[0.2em]">The Private List</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-3 mb-4 drop-shadow-md">Join the Visionaries.
+                        </h2>
+                        <p class="text-gray-300 font-medium">Subscribe for exclusive early access to limited edition
+                            frame releases and styling events.</p>
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <form onsubmit="event.preventDefault(); alert('Successfully Subscribed!');"
+                            class="flex flex-col sm:flex-row gap-3 w-full">
+                            <input type="email" placeholder="Enter your email address" required
+                                class="flex-1 bg-white/10 border border-white/30 rounded-xl sm:rounded-full py-4 px-6 text-white outline-none focus:bg-white/20 focus:border-white transition-colors backdrop-blur-md placeholder-white/50 font-medium w-full">
+                            <button type="submit"
+                                class="bg-primary hover:bg-yellow-600 text-white px-8 py-4 rounded-xl sm:rounded-full font-bold shadow-lg transition-colors w-full sm:w-auto">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Links Grid (Responsive Stacking) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                    <!-- Fixed Footer Logo Link -->
+                    <a href="index.html" class="flex items-center text-white mb-4 group w-fit cursor-pointer">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center mr-3 shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-glasses text-xl"></i>
+                        </div>
+                        <span
+                            class="text-xl font-bold tracking-tight drop-shadow-md font-display group-hover:opacity-80 transition-opacity">OptiDash</span>
+                    </a>
+                    <p class="text-gray-400 text-sm font-medium leading-relaxed">Ultra-luxury eyewear, handcrafted with
+                        aerospace-grade materials and timeless design.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-3 text-sm text-gray-400 font-medium">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Our Labs</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-widest">Services</h4>
+                    <ul class="space-y-3 text-sm text-gray-400 font-medium">
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Eye Exams</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary transition-colors">Frame
+                                Styling</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary transition-colors">Lens
+                                Replacement</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-1 sm:col-span-2 lg:col-span-2">
+                    <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-widest">Exclusive Member Benefits
+                    </h4>
+                    <p class="text-sm text-gray-400 font-medium mb-4">Create an account to track your prescriptions and
+                        save your favorite frames.</p>
+                    <a href="login.html"
+                        class="inline-block bg-white text-gray-900 px-6 py-3 rounded-xl font-bold shadow-md hover:-translate-y-1 transition-transform">Create
+                        Account</a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-6 text-center md:text-left">
+                <p class="text-gray-500 text-sm font-medium">© 2026 OptiDash Luxury Eyewear. All rights reserved.</p>
+                <div class="flex gap-6 text-gray-400">
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-primary hover:-translate-y-1 transition-all"><i
+                            class="fa-brands fa-instagram text-2xl drop-shadow-md"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-primary hover:-translate-y-1 transition-all"><i
+                            class="fa-brands fa-twitter text-2xl drop-shadow-md"></i></a>
+                    <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-primary hover:-translate-y-1 transition-all"><i
+                            class="fa-brands fa-pinterest text-2xl drop-shadow-md"></i></a>
+                </div>
+                <div class="flex gap-4 text-xs text-gray-500 font-medium">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <span>·</span>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (No external JS dependency to ensure buttons always work) -->
+    <script>
+        // Specific script for the FAQ accordion on this page
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.faq-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const p = card.querySelector('p.hidden');
+                    const icon = card.querySelector('i');
+                    if (p) {
+                        p.classList.remove('hidden');
+                        icon.classList.replace('fa-plus', 'fa-minus');
+                    } else {
+                        const shown = card.querySelector('p:not(.hidden)');
+                        if (shown) {
+                            shown.classList.add('hidden');
+                            icon.classList.replace('fa-minus', 'fa-plus');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

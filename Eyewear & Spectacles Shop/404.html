@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<script>
+    // Prevent white flash by applying dark mode immediately before render
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>Page Not Found | OptiDash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="premium.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: '#96712F', darkBg: '#0f172a', darkCard: '#1e293b', gold: { 50:'#FAF6EC',100:'#F2E8CC',200:'#E4CE94',300:'#D4B36A',400:'#C79A4B',500:'#B08A3E',600:'#96712F',700:'#7A5A26',800:'#5C441D',900:'#3D2E14',950:'#241A0C' }, blue: { 50:'#FAF6EC',100:'#F2E8CC',200:'#E4CE94',300:'#D4B36A',400:'#C79A4B',500:'#B08A3E',600:'#96712F',700:'#7A5A26',800:'#5C441D',900:'#3D2E14',950:'#241A0C' } }, boxShadow: { md: '0 6px 14px -4px rgba(92,68,29,0.15)', lg: '0 12px 22px -6px rgba(92,68,29,0.18)', xl: '0 20px 26px -6px rgba(92,68,29,0.16), 0 8px 10px -6px rgba(92,68,29,0.12)', '2xl': '0 26px 52px -14px rgba(92,68,29,0.30)' }, fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'], serif: ['Playfair Display','ui-serif','Georgia','serif'] } }
+            }
+        }
+    </script>
+
+<script src="main.js"></script>
+</head>
+<body class="bg-gray-50 dark:bg-darkBg flex items-center justify-center min-h-screen font-sans text-center px-4">
+
+    <div>
+        <div class="text-primary mb-6 relative inline-block">
+            <!-- Glitch / Blur Effect simulation -->
+            <i class="fa-solid fa-glasses text-8xl blur-[2px] absolute inset-0 opacity-50 ml-1 mt-1"></i>
+            <i class="fa-solid fa-glasses text-8xl relative z-10"></i>
+        </div>
+        <h1 class="text-6xl font-bold text-gray-900 dark:text-white mb-2">404</h1>
+        <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Vision Blurred?</h2>
+        <p class="text-gray-500 max-w-md mx-auto mb-8">It looks like this page is out of focus. The link might be broken, or the page may have been removed.</p>
+        <a href="index.html" class="bg-primary hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Back to Dashboard
+        </a>
+    </div>
+
+</body>
+</html>

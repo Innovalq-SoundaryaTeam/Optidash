@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <script>
+        // Prevent white flash by applying dark mode immediately before render
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>Coming Soon | OptiDash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="premium.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: '#96712F', darkBg: '#0f172a', darkCard: '#1e293b', gold: { 50: '#FAF6EC', 100: '#F2E8CC', 200: '#E4CE94', 300: '#D4B36A', 400: '#C79A4B', 500: '#B08A3E', 600: '#96712F', 700: '#7A5A26', 800: '#5C441D', 900: '#3D2E14', 950: '#241A0C' }, blue: { 50: '#FAF6EC', 100: '#F2E8CC', 200: '#E4CE94', 300: '#D4B36A', 400: '#C79A4B', 500: '#B08A3E', 600: '#96712F', 700: '#7A5A26', 800: '#5C441D', 900: '#3D2E14', 950: '#241A0C' } }, boxShadow: { md: '0 6px 14px -4px rgba(92,68,29,0.15)', lg: '0 12px 22px -6px rgba(92,68,29,0.18)', xl: '0 20px 26px -6px rgba(92,68,29,0.16), 0 8px 10px -6px rgba(92,68,29,0.12)', '2xl': '0 26px 52px -14px rgba(92,68,29,0.30)' }, fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'], serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'] } }
+            }
+        }
+    </script>
+    <script src="main.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen font-sans relative overflow-hidden">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-notification"
+        class="fixed top-5 left-1/2 transform -translate-x-1/2 -translate-y-24 opacity-0 transition-all duration-300 z-50 flex items-center w-full max-w-xs p-4 text-white bg-gray-800 rounded-lg shadow-xl border border-gray-700"
+        role="alert">
+        <div id="toast-icon-bg"
+            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-primary bg-primary/20 rounded-lg">
+            <i id="toast-icon" class="fa-solid fa-check"></i>
+        </div>
+        <div class="ms-3 text-sm font-medium" id="toast-message">Thanks! We'll notify you soon.</div>
+    </div>
+
+    <!-- Background Pattern -->
+    <div
+        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]">
+    </div>
+
+    <div class="text-center relative z-10 px-4 max-w-2xl">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 text-primary mb-8">
+            <i class="fa-solid fa-tools text-3xl"></i>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Crafting a New Vision</h1>
+        <p class="text-gray-400 text-lg mb-10">We are currently upgrading our platform to provide you with the best
+            optical experience. We'll be live shortly.</p>
+
+        <!-- Newsletter / Notify Box -->
+        <div class="bg-gray-800 p-2 rounded-lg flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input type="email" id="emailInput" placeholder="Enter your email"
+                class="flex-1 bg-transparent border-none text-white px-4 py-2 outline-none focus:ring-0">
+            <button id="notifyBtn"
+                class="bg-primary hover:bg-blue-600 px-6 py-2 rounded-md font-medium transition-colors">Notify
+                Me</button>
+        </div>
+
+        <div class="mt-12 flex justify-center space-x-6 text-gray-500">
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Toast Notification -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notifyBtn = document.getElementById('notifyBtn');
+            const toast = document.getElementById('toast-notification');
+            const emailInput = document.getElementById('emailInput');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+            const toastIconBg = document.getElementById('toast-icon-bg');
+            let toastTimeout;
+
+            notifyBtn.addEventListener('click', () => {
+                const email = emailInput.value.trim();
+
+                // Clear any existing timeouts to prevent animation glitching if clicked fast
+                clearTimeout(toastTimeout);
+
+                if (email === '') {
+                    // Show error state
+                    toastMessage.textContent = 'Please enter a valid email address!';
+                    toastIconBg.className = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-500/20 rounded-lg';
+                    toastIcon.className = 'fa-solid fa-circle-exclamation';
+                } else {
+                    // Show success state
+                    toastMessage.textContent = "Thanks! We'll notify you soon.";
+                    toastIconBg.className = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-primary bg-primary/20 rounded-lg';
+                    toastIcon.className = 'fa-solid fa-check';
+                    emailInput.value = ''; // Clear the input field on success
+                }
+
+                // Slide toast in
+                toast.classList.remove('-translate-y-24', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+
+                // Slide toast out after 3 seconds
+                toastTimeout = setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('-translate-y-24', 'opacity-0');
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

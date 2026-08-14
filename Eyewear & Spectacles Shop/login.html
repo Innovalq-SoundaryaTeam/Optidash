@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <script>
+        // Prevent white flash by applying dark mode immediately before render
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 512%22 fill=%22%2396712F%22><path d=%22M592 128H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h544c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48zM224 336c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z%22/></svg>">
+    <title>Portal Access | OptiDash Luxury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="premium.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#96712F', darkBg: '#050b14', darkCard: '#0a101d', gold: { 50: '#FAF6EC', 100: '#F2E8CC', 200: '#E4CE94', 300: '#D4B36A', 400: '#C79A4B', 500: '#B08A3E', 600: '#96712F', 700: '#7A5A26', 800: '#5C441D', 900: '#3D2E14', 950: '#241A0C' }, blue: { 50: '#FAF6EC', 100: '#F2E8CC', 200: '#E4CE94', 300: '#D4B36A', 400: '#C79A4B', 500: '#B08A3E', 600: '#96712F', 700: '#7A5A26', 800: '#5C441D', 900: '#3D2E14', 950: '#241A0C' } }, boxShadow: { md: '0 6px 14px -4px rgba(92,68,29,0.15)', lg: '0 12px 22px -6px rgba(92,68,29,0.18)', xl: '0 20px 26px -6px rgba(92,68,29,0.16), 0 8px 10px -6px rgba(92,68,29,0.12)', '2xl': '0 26px 52px -14px rgba(92,68,29,0.30)' }, fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'], serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark .glass-box {
+            background: rgba(10, 16, 29, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#f0f4f8] text-gray-800 dark:bg-darkBg dark:text-gray-200 font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden">
+
+    <!-- Floating UI Controls (Scaled for Mobile) -->
+    <a href="index.html"
+        class="absolute top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0a101d] text-gray-900 dark:text-white flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-800 transition-transform hover:scale-110 z-50">
+        <i class="fa-solid fa-arrow-left text-sm sm:text-base"></i>
+    </a>
+    <button
+        onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
+        class="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0a101d] text-gray-900 dark:text-white flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-800 transition-transform hover:scale-110 z-50">
+        <i class="fa-solid fa-moon text-sm sm:text-lg"></i>
+    </button>
+
+    <div
+        class="absolute top-[10%] left-[10%] w-[500px] h-[500px] rounded-full bg-blue-500/20 dark:bg-blue-900/20 blur-[140px] pointer-events-none">
+    </div>
+
+    <!-- Container scaling adjusted for tiny screens -->
+    <div
+        class="max-w-md w-full glass-box rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 md:p-12 relative z-10 transition-colors duration-300 mt-20 sm:mt-16 md:mt-0">
+
+        <div class="text-center mb-6 sm:mb-8">
+            <div
+                class="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl shadow-md mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-glasses text-lg sm:text-xl"></i>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">OptiDash</h1>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">Bespoke Eyewear & Clinical
+                Portal</p>
+        </div>
+
+        <div
+            class="flex bg-gray-100 dark:bg-[#111827] p-1.5 rounded-2xl mb-6 sm:mb-8 border border-gray-200 dark:border-gray-800">
+            <button id="signin-tab" onclick="switchTab('signin')"
+                class="flex-1 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-xl transition-all bg-white dark:bg-gray-800 text-primary shadow-md">Sign
+                In</button>
+            <button id="register-tab" onclick="switchTab('register')"
+                class="flex-1 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-xl transition-all text-gray-500 dark:text-gray-400">Register</button>
+        </div>
+
+        <form id="signin-form" action="dashboard.html" method="GET" class="space-y-4 sm:space-y-5">
+            <div>
+                <label
+                    class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest mb-2">Email
+                    Address</label>
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-envelope absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
+                    <input type="email" required placeholder="visionary@optidash.com"
+                        class="w-full pl-10 sm:pl-12 pr-4 sm:pr-5 py-3 sm:py-4 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl focus:border-primary outline-none text-gray-900 dark:text-white text-sm sm:text-base font-medium shadow-sm">
+                </div>
+            </div>
+            <div>
+                <label
+                    class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest mb-2">Password</label>
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-lock absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
+                    <input type="password" required placeholder="••••••••"
+                        class="w-full pl-10 sm:pl-12 pr-4 sm:pr-5 py-3 sm:py-4 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl focus:border-primary outline-none text-gray-900 dark:text-white text-sm sm:text-base font-medium shadow-sm">
+                </div>
+            </div>
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white text-sm sm:text-base font-bold py-3 sm:py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-[1.02] mt-2">Sign
+                In</button>
+        </form>
+
+        <form id="register-form"
+            onsubmit="event.preventDefault(); alert('Account registered successfully! Please sign in.'); switchTab('signin');"
+            class="space-y-4 sm:space-y-5 hidden">
+            <div>
+                <label
+                    class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest mb-2">Full
+                    Name</label>
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-user absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
+                    <input type="text" required placeholder="John Doe"
+                        class="w-full pl-10 sm:pl-12 pr-4 sm:pr-5 py-3 sm:py-4 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl focus:border-primary outline-none text-gray-900 dark:text-white text-sm sm:text-base font-medium shadow-sm">
+                </div>
+            </div>
+            <div>
+                <label
+                    class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest mb-2">Email
+                    Address</label>
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-envelope absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
+                    <input type="email" required placeholder="name@example.com"
+                        class="w-full pl-10 sm:pl-12 pr-4 sm:pr-5 py-3 sm:py-4 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl focus:border-primary outline-none text-gray-900 dark:text-white text-sm sm:text-base font-medium shadow-sm">
+                </div>
+            </div>
+            <div>
+                <label
+                    class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest mb-2">Create
+                    Password</label>
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-lock absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
+                    <input type="password" required placeholder="••••••••"
+                        class="w-full pl-10 sm:pl-12 pr-4 sm:pr-5 py-3 sm:py-4 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl focus:border-primary outline-none text-gray-900 dark:text-white text-sm sm:text-base font-medium shadow-sm">
+                </div>
+            </div>
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white text-sm sm:text-base font-bold py-3 sm:py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-[1.02] mt-2">Create
+                Account</button>
+        </form>
+
+        <!-- Social Login Integration -->
+        <div class="mt-6 sm:mt-8">
+            <div class="flex items-center gap-2 sm:gap-4 mb-5 sm:mb-6">
+                <div class="flex-1 border-t border-gray-300 dark:border-gray-700"></div>
+                <span
+                    class="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Or
+                    continue with</span>
+                <div class="flex-1 border-t border-gray-300 dark:border-gray-700"></div>
+            </div>
+
+            <!-- Stacks into a column on very small screens to avoid squishing -->
+            <div class="flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4">
+                <a href="https://accounts.google.com/signin" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center justify-center px-4 py-3 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm text-gray-700 dark:text-gray-300 text-sm sm:text-base font-bold hover:border-primary transition-all hover:scale-[1.02]">
+                    <i class="fa-brands fa-google text-red-500 text-base sm:text-lg mr-2"></i> Google
+                </a>
+                <a href="https://appleid.apple.com/sign-in" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center justify-center px-4 py-3 bg-white dark:bg-[#050b14] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm text-gray-700 dark:text-gray-300 text-sm sm:text-base font-bold hover:border-primary transition-all hover:scale-[1.02]">
+                    <i class="fa-brands fa-apple text-gray-900 dark:text-white text-lg sm:text-xl mr-2"></i> Apple
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const signinTab = document.getElementById('signin-tab');
+            const registerTab = document.getElementById('register-tab');
+            const signinForm = document.getElementById('signin-form');
+            const registerForm = document.getElementById('register-form');
+
+            // Defined arrays to safely toggle classes without destroying the responsive padding/text classes
+            const activeClasses = ['bg-white', 'dark:bg-gray-800', 'text-primary', 'shadow-md'];
+            const inactiveClasses = ['text-gray-500', 'dark:text-gray-400'];
+
+            if (tab === 'signin') {
+                signinTab.classList.remove(...inactiveClasses);
+                signinTab.classList.add(...activeClasses);
+
+                registerTab.classList.remove(...activeClasses);
+                registerTab.classList.add(...inactiveClasses);
+
+                signinForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                registerTab.classList.remove(...inactiveClasses);
+                registerTab.classList.add(...activeClasses);
+
+                signinTab.classList.remove(...activeClasses);
+                signinTab.classList.add(...inactiveClasses);
+
+                registerForm.classList.remove('hidden');
+                signinForm.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>
