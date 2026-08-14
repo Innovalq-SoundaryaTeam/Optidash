@@ -91,7 +91,9 @@
                 <a href="about.html"
                     class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">About Us</a>
                 <a href="services.html"
-                    class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Services</a>
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Shop by Category</a>
+                <a href="stores.html"
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Stores</a>
                 <a href="pricing.html"
                     class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Pricing</a>
                 <a href="blog.html"
@@ -146,7 +148,9 @@
                     class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About
                     Us</a>
                 <a href="services.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Shop by Category</a>
+                <a href="stores.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Stores</a>
                 <a href="pricing.html"
                     class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Pricing</a>
                 <a href="blog.html"
@@ -198,10 +202,17 @@
         <div class="relative z-10 max-w-5xl mx-auto px-4 w-full mt-20 flex flex-col items-center text-center">
             <!-- Sleeker Badge -->
             <div
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 dark:bg-[#0a101d]/80 backdrop-blur-md border border-gray-200 dark:border-gray-700 mb-8 shadow-xl hover:-translate-y-1 transition-transform">
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 dark:bg-[#0a101d]/80 backdrop-blur-md border border-gray-200 dark:border-gray-700 mb-6 shadow-xl hover:-translate-y-1 transition-transform">
                 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 <span class="text-xs font-black tracking-widest uppercase text-gray-900 dark:text-white">New Arrivals
                     2026</span>
+            </div>
+
+            <!-- Offer ribbon -->
+            <div
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/30 mb-8 text-primary font-bold text-xs sm:text-sm">
+                <i class="fa-solid fa-tag"></i>
+                <span>Up to 40% off Polarized Sunglasses — this week only</span>
             </div>
 
             <!-- Enhanced Headline: Reduced mobile font size from text-6xl to text-5xl to fit screens perfectly -->
@@ -228,6 +239,25 @@
                     Explore Collection
                 </a>
             </div>
+
+            <!-- Popular eyewear quick links -->
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <a href="services.html?cat=sunglasses"
+                    class="px-4 py-2 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 hover:border-primary hover:text-primary transition-colors">Aviator
+                    Sunglasses</a>
+                <a href="services.html?cat=eyeglasses"
+                    class="px-4 py-2 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 hover:border-primary hover:text-primary transition-colors">Round
+                    Eyeglasses</a>
+                <a href="services.html?cat=contact-lenses"
+                    class="px-4 py-2 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 hover:border-primary hover:text-primary transition-colors">Contact
+                    Lenses</a>
+                <a href="services.html?offer=bogo"
+                    class="px-4 py-2 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 hover:border-primary hover:text-primary transition-colors">Buy
+                    1 Get 1 Free</a>
+            </div>
+
+            <p class="mt-6 text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                Featuring Ray-Ban · Oakley · Vogue Eyewear · Persol · Carrera</p>
         </div>
     </section>
 
@@ -252,76 +282,119 @@
         </div>
     </section>
 
-    <!-- SECTION 3: SERVICES SHOWCASE (Solid Visibility Premium Cards) -->
+    <!-- SECTION 3: SHOP BY CATEGORY -->
     <section class="py-32 relative w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-20">
+                <span class="text-primary font-black text-xs uppercase tracking-[0.2em]">Shop by Category</span>
                 <h2
-                    class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
-                    Elevated Eye Care</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Beyond standard optometry. We
-                    combine medical precision with bespoke aesthetic styling.</p>
+                    class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-3 mb-4">
+                    Find Exactly What Your Eyes Need</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">From daily prescription frames
+                    to statement sunglasses — explore our full eyewear range, curated by category.</p>
             </div>
 
-            <!-- Redesigned distinct solid cards -->
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <a href="services.html?cat=eyeglasses"
                     class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-primary/40 transition-all duration-300 group overflow-hidden relative">
                     <div
                         class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-2xl z-0 transition-transform group-hover:scale-150">
                     </div>
                     <div
                         class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-primary mb-8 group-hover:scale-110 transition-transform relative z-10">
-                        <i class="fa-solid fa-microscope"></i>
+                        <i class="fa-solid fa-glasses"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 relative z-10">Clinical Precision
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Ultra-HD
-                        retinal mapping and 3D eye scans to detect microscopic changes in your vision health.</p>
-                    <a href="service-clinical.html"
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Eyeglasses</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Prescription
+                        frames in full-rim, half-rim and rimless styles for everyday wear.</p>
+                    <span
                         class="mt-auto w-fit inline-flex items-center font-bold text-primary group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
-                        Learn More <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
 
-                <!-- Card 2 -->
-                <div
+                <a href="services.html?cat=sunglasses"
                     class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-purple-500/40 transition-all duration-300 group overflow-hidden relative">
                     <div
                         class="absolute -left-10 -top-10 w-40 h-40 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-2xl z-0 transition-transform group-hover:scale-150">
                     </div>
                     <div
                         class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-purple-500 mb-8 group-hover:scale-110 transition-transform relative z-10">
-                        <i class="fa-solid fa-gem"></i>
+                        <i class="fa-solid fa-sun"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 relative z-10">Bespoke Styling</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Facial geometry
-                        analysis to match you with frames that perfectly complement your bone structure.</p>
-                    <a href="service-styling.html"
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Sunglasses</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">UV400
+                        protected, polarized and mirrored lenses from premium global brands.</p>
+                    <span
                         class="mt-auto w-fit inline-flex items-center font-bold text-purple-600 group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
-                        Book Styling <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
 
-                <!-- Card 3 -->
-                <div
+                <a href="services.html?cat=contact-lenses"
                     class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-amber-500/40 transition-all duration-300 group overflow-hidden relative">
                     <div
                         class="absolute right-10 top-10 w-40 h-40 bg-amber-400/10 dark:bg-amber-600/10 rounded-full blur-2xl z-0 transition-transform group-hover:scale-150">
                     </div>
                     <div
                         class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-amber-500 mb-8 group-hover:scale-110 transition-transform relative z-10">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-droplet"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 relative z-10">Custom Optics</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Lenses crafted
-                        from index-matched polymers, featuring military-grade anti-reflective coatings.</p>
-                    <a href="service-optics.html"
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Contact Lenses</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Daily,
+                        monthly, colored and toric lenses for comfort that lasts all day.</p>
+                    <span
                         class="mt-auto w-fit inline-flex items-center font-bold text-amber-600 group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
-                        View Lenses <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+
+                <a href="services.html?cat=kids"
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-teal-500/40 transition-all duration-300 group overflow-hidden relative">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-teal-500 mb-8 group-hover:scale-110 transition-transform relative z-10">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Kids Eyewear</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Flexible,
+                        unbreakable frames designed for active children ages 4–14.</p>
+                    <span
+                        class="mt-auto w-fit inline-flex items-center font-bold text-teal-600 group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+
+                <a href="services.html?cat=computer"
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-blue-500/40 transition-all duration-300 group overflow-hidden relative">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-blue-500 mb-8 group-hover:scale-110 transition-transform relative z-10">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Computer Glasses
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Blue-light
+                        filtering lenses that reduce digital eye strain during screen time.</p>
+                    <span
+                        class="mt-auto w-fit inline-flex items-center font-bold text-blue-600 group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+
+                <a href="services.html?cat=reading"
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-xl rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-rose-500/40 transition-all duration-300 group overflow-hidden relative">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-rose-500 mb-8 group-hover:scale-110 transition-transform relative z-10">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Reading Glasses
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 relative z-10 font-medium flex-grow">Lightweight
+                        magnifiers from +1.00 to +3.50 for effortless close-up focus.</p>
+                    <span
+                        class="mt-auto w-fit inline-flex items-center font-bold text-rose-600 group-hover:gap-3 gap-2 transition-all relative z-10 uppercase tracking-widest text-sm">
+                        Explore <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
@@ -410,6 +483,63 @@
                                 Now</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4.5: NEARBY STORES -->
+    <section class="py-24 relative w-full bg-gray-50 dark:bg-[#050b14] border-y border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-12">
+                <div>
+                    <span class="text-primary font-black text-xs uppercase tracking-[0.2em]">Visit Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-3">
+                        Stores Near You</h2>
+                </div>
+                <a href="stores.html"
+                    class="font-bold border-b-2 border-primary text-primary pb-1 hover:opacity-70 transition-opacity w-fit">View
+                    All 120+ Stores &rarr;</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <h4 class="font-black text-lg text-gray-900 dark:text-white mb-1">OptiDash Bandra</h4>
+                    <p class="text-sm text-gray-500 mb-4">Mumbai, Maharashtra</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-2"><i
+                            class="fa-solid fa-location-dot text-primary mr-2"></i>Linking Road, Bandra West, Mumbai
+                        400050</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-6"><i
+                            class="fa-solid fa-clock text-primary mr-2"></i>Open today · 10:00 AM – 9:00 PM</p>
+                    <a href="stores.html#appointment"
+                        class="inline-block bg-primary text-white px-6 py-3 rounded-full font-bold shadow-md hover:scale-105 transition-transform text-sm">Book
+                        a Visit</a>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <h4 class="font-black text-lg text-gray-900 dark:text-white mb-1">OptiDash Koramangala</h4>
+                    <p class="text-sm text-gray-500 mb-4">Bengaluru, Karnataka</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-2"><i
+                            class="fa-solid fa-location-dot text-primary mr-2"></i>80 Feet Road, Koramangala,
+                        Bengaluru 560034</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-6"><i
+                            class="fa-solid fa-clock text-primary mr-2"></i>Open today · 10:00 AM – 9:00 PM</p>
+                    <a href="stores.html#appointment"
+                        class="inline-block bg-primary text-white px-6 py-3 rounded-full font-bold shadow-md hover:scale-105 transition-transform text-sm">Book
+                        a Visit</a>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <h4 class="font-black text-lg text-gray-900 dark:text-white mb-1">OptiDash Connaught Place</h4>
+                    <p class="text-sm text-gray-500 mb-4">New Delhi</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-2"><i
+                            class="fa-solid fa-location-dot text-primary mr-2"></i>Block A, Connaught Place, New Delhi
+                        110001</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-6"><i
+                            class="fa-solid fa-clock text-primary mr-2"></i>Open today · 10:00 AM – 9:00 PM</p>
+                    <a href="stores.html#appointment"
+                        class="inline-block bg-primary text-white px-6 py-3 rounded-full font-bold shadow-md hover:scale-105 transition-transform text-sm">Book
+                        a Visit</a>
                 </div>
             </div>
         </div>
@@ -633,7 +763,8 @@
                     <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-widest">Company</h4>
                     <ul class="space-y-3 text-sm text-gray-400 font-medium">
                         <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-primary transition-colors">Our Labs</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Shop by Category</a></li>
+                        <li><a href="stores.html" class="hover:text-primary transition-colors">Store Locator</a></li>
                         <li><a href="blog.html" class="hover:text-primary transition-colors">Journal</a></li>
                         <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
