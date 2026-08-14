@@ -35,7 +35,7 @@
 
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-20 pointer-events-none">
         <div
-            class="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 dark:bg-blue-900/10 blur-[120px]">
+            class="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#0F1E36]/10 dark:bg-[#96712F]/15 blur-[120px]">
         </div>
     </div>
 
@@ -54,28 +54,15 @@
                 </a>
 
                 <div class="hidden md:flex gap-8 items-center">
-                    <div class="relative group">
-                        <button
-                            class="flex items-center text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold">
-                            Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 opacity-70"></i>
-                        </button>
-                        <div
-                            class="absolute left-0 top-full mt-2 w-56 bg-white dark:bg-[#0f172a] rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-3 z-50 shadow-2xl border border-gray-100 dark:border-gray-800">
-                            <a href="index.html"
-                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                                1 (Ultra Luxury)</a>
-                            <a href="home-2.html"
-                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mt-1">Home
-                                2 (Storefront)</a>
-                        </div>
-                    </div>
+                    <a href="index.html"
+                        class="text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold">Home</a>
                     <a href="about.html"
                         class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">About
                         Us</a>
                     <a href="services.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Services</a>
-                    <a href="pricing.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Pricing</a>
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Shop by Category</a>
+                    <a href="stores.html"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Stores</a>
                     <a href="blog.html" class="text-primary font-black transition py-2">Blog</a>
                     <a href="contact.html"
                         class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Contact</a>
@@ -121,18 +108,14 @@
             <!-- Scrollable Links -->
             <div class="flex-1 overflow-y-auto overscroll-contain flex flex-col p-4 gap-2">
                 <a href="index.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                    1 (Ultra Luxury)</a>
-                <a href="home-2.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                    2 (Storefront)</a>
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
                 <a href="about.html"
                     class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About
                     Us</a>
                 <a href="services.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
-                <a href="pricing.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Pricing</a>
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Shop by Category</a>
+                <a href="stores.html"
+                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Stores</a>
                 <a href="blog.html"
                     class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Blog</a>
                 <a href="contact.html"
@@ -410,6 +393,24 @@
     <script src="main.js"></script>
     <script src="blog-data.js"></script>
     <script src="blog-details.js"></script>
+
+    <!-- Scroll-reveal animation -->
+    <script>
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var sections = Array.prototype.slice.call(document.querySelectorAll('section'));
+        sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        sections.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
 </body>
 
 </html>
