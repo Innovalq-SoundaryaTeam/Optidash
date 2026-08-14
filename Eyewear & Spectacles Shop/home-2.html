@@ -227,37 +227,71 @@
         </div>
     </nav>
 
-    <!-- 2. E-COMMERCE RETAIL HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <!-- Correctly tuned brightness for dark mode to ensure background visibility -->
-            <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=2000&q=80"
-                alt="Stylish Eyewear Model"
-                class="w-full h-full object-cover object-center filter brightness-[0.85] dark:brightness-[0.6]">
-            <div
-                class="absolute inset-0 bg-gradient-to-b from-white/60 via-white/80 to-[#f8fafc] dark:from-black/60 dark:via-darkBg/90 dark:to-darkBg">
-            </div>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div
-                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white dark:bg-black/50 border border-gray-200 dark:border-gray-700 mb-8 shadow-md">
-                <span class="text-xs font-black tracking-widest uppercase text-primary">Summer Collection 2026</span>
-            </div>
-            <h1
-                class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-8 max-w-4xl mx-auto leading-tight drop-shadow-sm">
-                Vision, <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-600">Refined.</span>
-            </h1>
-            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12 font-medium">Discover our
-                exclusive collection of handcrafted frames designed for the modern aesthete. Premium lenses, timeless
-                styles.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#trending"
-                    class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-full font-bold transition-all shadow-xl hover:-translate-y-1 hover:bg-yellow-700">Shop
-                    Men's</a>
-                <a href="#trending"
-                    class="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-full font-bold transition-all shadow-xl hover:-translate-y-1">Shop
-                    Women's</a>
+    <!-- 2. E-COMMERCE RETAIL HERO SECTION — split layout: framed visual left, copy + stats right -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-[#0a101d] dark:to-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
+
+                <!-- LEFT: Framed visual -->
+                <div class="relative max-w-md mx-auto lg:max-w-none order-2 lg:order-1">
+                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl w-full h-[380px] sm:h-[440px] lg:h-[520px]">
+                        <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=1200&q=80"
+                            alt="Stylish Eyewear Model" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+                        </div>
+                    </div>
+                    <!-- Floating shipping badge -->
+                    <div
+                        class="absolute -bottom-6 -right-4 sm:-right-8 bg-white dark:bg-[#111827] rounded-2xl shadow-2xl p-4 sm:p-5 border border-gray-100 dark:border-gray-800">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary text-lg">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <p class="font-black text-gray-900 dark:text-white text-sm">Free 2-Day Shipping</p>
+                                <p class="text-xs text-gray-500">On orders over $100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Copy -->
+                <div class="order-1 lg:order-2 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white dark:bg-black/50 border border-gray-200 dark:border-gray-700 mb-6 shadow-sm">
+                        <span class="text-xs font-black tracking-widest uppercase text-primary">Summer Collection 2026</span>
+                    </div>
+                    <h1
+                        class="text-5xl sm:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 leading-[1.05]">
+                        Vision, <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-gold-400">Refined.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 mb-8 font-medium">Discover our
+                        exclusive collection of handcrafted frames designed for the modern aesthete. Premium lenses, timeless
+                        styles.</p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#trending"
+                            class="bg-primary text-white px-8 py-4 rounded-full font-bold text-center transition-all shadow-xl hover:-translate-y-1 hover:bg-gold-700">Shop
+                            Men's</a>
+                        <a href="#trending"
+                            class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-full font-bold text-center transition-all shadow-xl hover:-translate-y-1">Shop
+                            Women's</a>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-8 pt-6 border-t border-gray-200 dark:border-gray-800">
+                        <div>
+                            <p class="text-2xl font-black text-gray-900 dark:text-white">50+</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Global Brands</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-gray-900 dark:text-white">1M+</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Customers</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-gray-900 dark:text-white">4.9★</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Avg. Rating</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -287,52 +321,53 @@
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Find the perfect frames tailored
                     to your lifestyle and prescription needs.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Category 1 -->
-                <div class="bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer"
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Category 1: large featured tile spanning both rows -->
+                <div class="md:row-span-2 bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer"
                     onclick="viewProduct('Optical Frames', 129.00, 'https://images.pexels.com/photos/30244333/pexels-photo-30244333.jpeg')">
-                    <div class="h-64 overflow-hidden">
+                    <div class="h-64 md:h-full md:absolute md:inset-0 overflow-hidden">
                         <img src="https://images.pexels.com/photos/30244333/pexels-photo-30244333.jpeg"
                             alt="Optical Glasses"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="hidden md:block absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Optical Frames</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 font-medium">Everyday clarity and style.</p>
+                    <div class="p-8 text-center md:absolute md:bottom-0 md:left-0 md:right-0 md:text-left md:text-white">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white md:text-white mb-2">Optical Frames</h3>
+                        <p class="text-gray-600 dark:text-gray-400 md:text-white/80 mb-6 font-medium">Everyday clarity and style.</p>
                         <span
-                            class="text-primary font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1">Shop
+                            class="text-primary md:text-white font-bold uppercase tracking-widest text-sm border-b-2 border-primary md:border-white pb-1">Shop
                             Optical</span>
                     </div>
                 </div>
                 <!-- Category 2 -->
-                <div class="bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer"
+                <div class="bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer flex flex-col sm:flex-row"
                     onclick="viewProduct('Premium Sunglasses', 149.00, 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80')">
-                    <div class="h-64 overflow-hidden">
+                    <div class="h-40 sm:h-auto sm:w-1/2 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80"
                             alt="Sunglasses"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Sunglasses</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 font-medium">Premium UV protection.</p>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Sunglasses</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 font-medium text-sm">Premium UV protection.</p>
                         <span
-                            class="text-primary font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1">Shop
+                            class="text-primary font-bold uppercase tracking-widest text-xs border-b-2 border-primary pb-1 w-fit">Shop
                             Sun</span>
                     </div>
                 </div>
                 <!-- Category 3 -->
-                <div class="bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer"
+                <div class="bg-white dark:bg-[#111827] rounded-[2rem] border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden group cursor-pointer flex flex-col sm:flex-row"
                     onclick="viewProduct('Blue Light Lenses', 99.00, 'https://images.pexels.com/photos/30489732/pexels-photo-30489732.jpeg')">
-                    <div class="h-64 overflow-hidden">
+                    <div class="h-40 sm:h-auto sm:w-1/2 overflow-hidden">
                         <img src="https://images.pexels.com/photos/30489732/pexels-photo-30489732.jpeg"
                             alt="Computer Glasses"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Blue Light Lenses</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 font-medium">Protect against digital strain.</p>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Blue Light Lenses</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 font-medium text-sm">Protect against digital strain.</p>
                         <span
-                            class="text-primary font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1">Shop
+                            class="text-primary font-bold uppercase tracking-widest text-xs border-b-2 border-primary pb-1 w-fit">Shop
                             Computer</span>
                     </div>
                 </div>
