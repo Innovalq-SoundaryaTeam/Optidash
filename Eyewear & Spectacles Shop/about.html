@@ -285,8 +285,11 @@
 
     <!-- 5. MEET THE EXPERTS CONTAINER -->
     <section class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-fixed bg-cover bg-center opacity-[0.07] dark:opacity-[0.14] pointer-events-none"
-            style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')">
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <img data-parallax="0.12"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80"
+                alt=""
+                class="absolute left-0 -top-[15%] w-full h-[130%] object-cover opacity-[0.07] dark:opacity-[0.14]">
         </div>
         <div
             class="absolute inset-0 z-0 bg-gradient-to-b from-white via-white/90 to-white dark:from-darkBg dark:via-darkBg/90 dark:to-darkBg pointer-events-none">
@@ -537,6 +540,30 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         sections.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
+
+    <!-- Subtle scroll parallax on background imagery -->
+    <script>
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var els = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+        if (!els.length) return;
+        var ticking = false;
+        function apply() {
+            var vh = window.innerHeight;
+            els.forEach(function (el) {
+                var r = el.getBoundingClientRect();
+                var center = r.top + r.height / 2 - vh / 2;
+                var speed = parseFloat(el.getAttribute('data-parallax')) || 0.12;
+                el.style.transform = 'translate3d(0,' + (center * -speed).toFixed(1) + 'px,0)';
+            });
+            ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+        }, { passive: true });
+        apply();
     })();
     </script>
 </body>
