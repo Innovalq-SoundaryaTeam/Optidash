@@ -107,6 +107,11 @@
                     class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
                     <i class="fa-solid fa-moon text-lg transition-transform hover:rotate-12"></i>
                 </button>
+                <button onclick="window.location.href='checkout.html'"
+                    class="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="siteCartCount" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
                 <div class="flex items-center gap-2 ml-2">
                     <a href="login.html"
                         class="text-gray-800 dark:text-gray-200 font-bold hover:text-primary transition-colors px-3 py-2">
@@ -121,6 +126,11 @@
 
             <!-- Mobile Menu Buttons -->
             <div class="flex md:hidden items-center gap-2 flex-shrink-0">
+                <button onclick="window.location.href='checkout.html'"
+                    class="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="siteCartCountMobile" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
                 <button
                     class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
                     <i class="fa-solid fa-moon text-lg"></i>
@@ -830,6 +840,17 @@
 
     <!-- Main JS -->
     <script src="main.js"></script>
+
+    <!-- Cart count -->
+    <script>
+        (function () {
+            const cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            const desktopBadge = document.getElementById('siteCartCount');
+            const mobileBadge = document.getElementById('siteCartCountMobile');
+            if (desktopBadge) desktopBadge.textContent = cartArray.length;
+            if (mobileBadge) mobileBadge.textContent = cartArray.length;
+        })();
+    </script>
 
     <!-- Scroll-reveal animation -->
     <script>

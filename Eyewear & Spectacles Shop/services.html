@@ -86,6 +86,11 @@
                 <button class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
                     <i class="fa-solid fa-moon text-lg transition-transform hover:rotate-12"></i>
                 </button>
+                <button onclick="window.location.href='checkout.html'"
+                    class="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="shopCartCount" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
                 <div class="flex items-center gap-2 ml-2">
                     <a href="login.html" class="text-gray-800 dark:text-gray-200 font-bold hover:text-primary transition-colors px-3 py-2">Login</a>
                     <a href="signup.html" class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-transform shadow-lg">Sign Up</a>
@@ -93,6 +98,11 @@
             </div>
 
             <div class="flex md:hidden items-center gap-2 flex-shrink-0">
+                <button onclick="window.location.href='checkout.html'"
+                    class="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="shopCartCountMobile" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
                 <button class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
                     <i class="fa-solid fa-moon text-lg"></i>
                 </button>
@@ -702,7 +712,15 @@
 
     <!-- Shop filters, sorting, cart -->
     <script>
+        function updateShopCartCount() {
+            const cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+            const desktopBadge = document.getElementById('shopCartCount');
+            const mobileBadge = document.getElementById('shopCartCountMobile');
+            if (desktopBadge) desktopBadge.textContent = cartArray.length;
+            if (mobileBadge) mobileBadge.textContent = cartArray.length;
+        }
         document.addEventListener('DOMContentLoaded', () => {
+            updateShopCartCount();
             const grid = document.getElementById('productGrid');
             const cards = Array.from(grid.querySelectorAll('.product-card'));
             const checkboxes = document.querySelectorAll('.filter-options input, aside input[type=checkbox]');
@@ -788,6 +806,16 @@
 
             document.querySelectorAll('.add-to-cart').forEach(b => {
                 b.addEventListener('click', () => {
+                    const card = b.closest('.product-card');
+                    if (card) {
+                        const name = card.querySelector('h3')?.textContent.trim() || 'Eyewear';
+                        const price = parseFloat(card.dataset.price) || 0;
+                        const image = card.querySelector('img')?.getAttribute('src') || '';
+                        const cartArray = JSON.parse(localStorage.getItem('optidash_cart')) || [];
+                        cartArray.push({ name, price, image });
+                        localStorage.setItem('optidash_cart', JSON.stringify(cartArray));
+                        updateShopCartCount();
+                    }
                     const original = b.textContent;
                     b.textContent = 'Added ✓';
                     setTimeout(() => { b.textContent = original; }, 1200);
