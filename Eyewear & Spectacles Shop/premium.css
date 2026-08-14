@@ -95,3 +95,35 @@ input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible
     outline-color: #C79A4B;
 }
 
+/* 5. Scroll-reveal animation — classes are added purely by JS, so sections stay
+      normally visible if JS fails to load (progressive enhancement). */
+.js-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+    will-change: opacity, transform;
+}
+.js-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.js-reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+.js-reveal-stagger.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+.js-reveal-stagger.is-visible > *:nth-child(1) { transition-delay: .03s; }
+.js-reveal-stagger.is-visible > *:nth-child(2) { transition-delay: .09s; }
+.js-reveal-stagger.is-visible > *:nth-child(3) { transition-delay: .15s; }
+.js-reveal-stagger.is-visible > *:nth-child(4) { transition-delay: .21s; }
+.js-reveal-stagger.is-visible > *:nth-child(5) { transition-delay: .27s; }
+.js-reveal-stagger.is-visible > *:nth-child(6) { transition-delay: .33s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .js-reveal, .js-reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+

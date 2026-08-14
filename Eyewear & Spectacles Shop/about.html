@@ -60,129 +60,60 @@
         </div>
     </div>
 
-    <!-- 1. UNIVERSAL NAVBAR (Guaranteed Visibility) -->
-    <nav class="fixed w-full top-0 z-50 solid-nav transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-
-                <!-- Fixed Logo Link -->
-                <a href="index.html" class="flex items-center group cursor-pointer flex-shrink-0">
-                <div
-                    class="w-10 h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center mr-3 shadow-md group-hover:scale-105 transition-transform">
+    <!-- NAVBAR -->
+    <nav class="fixed top-4 left-4 right-4 max-w-7xl mx-auto z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border border-gray-200/80 dark:border-gray-800 shadow-xl rounded-2xl transition-colors duration-300 px-4 sm:px-6">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center group cursor-pointer flex-shrink-0">
+                <div class="w-10 h-10 bg-gradient-to-tr from-primary to-yellow-600 text-white rounded-xl flex items-center justify-center mr-3 shadow-md group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-glasses text-xl"></i>
                 </div>
-                <span
-                    class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white group-hover:opacity-80 transition-opacity">OptiDash</span>
+                <span class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white group-hover:opacity-80 transition-opacity">OptiDash</span>
             </a>
 
-                <div class="hidden md:flex gap-8 items-center">
-                    <div class="relative group">
-                        <button
-                            class="nav-link flex items-center text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold"
-                            data-target="home">
-                            Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 opacity-70"></i>
-                        </button>
-                        <div
-                            class="absolute left-0 top-full mt-2 w-56 bg-white dark:bg-[#0f172a] rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-3 z-50 shadow-2xl border border-gray-100 dark:border-gray-800">
-                            <a href="index.html"
-                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                                1 (Ultra Luxury)</a>
-                            <a href="home-2.html"
-                                class="block px-4 py-3 text-sm font-medium rounded-xl text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mt-1">Home
-                                2 (SaaS Platform)</a>
-                        </div>
-                    </div>
-                    <a href="about.html" class="nav-link text-primary font-black transition py-2">About Us</a>
-                    <a href="services.html"
-                        class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Shop by Category</a>
-                    <a href="stores.html"
-                        class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Stores</a>
-                    <a href="pricing.html"
-                        class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Pricing</a>
-                    <a href="blog.html"
-                        class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Blog</a>
-                    <a href="contact.html"
-                        class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Contact</a>
+            <div class="hidden lg:flex gap-6 items-center">
+                <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Home</a>
+                <a href="about.html" class="text-primary font-black transition py-2 whitespace-nowrap">About Us</a>
+                <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Shop by Category</a>
+                <a href="stores.html" class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Stores</a>
+                <a href="blog.html" class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Blog</a>
+                <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Contact</a>
 
-                    <div class="h-6 w-px bg-gray-300 dark:bg-gray-700"></div>
+                <div class="h-6 w-px bg-gray-300 dark:bg-gray-700"></div>
 
-                    <button
-                        class="rtl-toggle text-xs font-black text-gray-500 hover:text-primary transition-colors tracking-widest uppercase">RTL</button>
-                    <button
-                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
-                        <i class="fa-solid fa-moon text-lg transition-transform hover:rotate-12"></i>
-                    </button>
-
-                    <div class="flex items-center gap-2 ml-2">
-                        <a href="login.html"
-                            class="text-gray-800 dark:text-gray-200 font-bold hover:text-primary transition-colors px-3 py-2">
-                            Login
-                        </a>
-                        <a href="signup.html"
-                            class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-transform shadow-lg">
-                            Sign Up
-                        </a>
-                    </div>
+                <button class="rtl-toggle text-xs font-black text-gray-500 hover:text-primary transition-colors tracking-widest uppercase">RTL</button>
+                <button class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <i class="fa-solid fa-moon text-lg transition-transform hover:rotate-12"></i>
+                </button>
+                <div class="flex items-center gap-2 ml-1">
+                    <a href="login.html" class="text-gray-800 dark:text-gray-200 font-bold hover:text-primary transition-colors px-3 py-2 whitespace-nowrap">Login</a>
+                    <a href="signup.html" class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-transform shadow-lg whitespace-nowrap">Sign Up</a>
                 </div>
+            </div>
 
-                <div class="flex md:hidden items-center gap-3">
-                    <button
-                        class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
-                        <i class="fa-solid fa-moon text-lg"></i>
-                    </button>
-                    <button class="mobile-menu-btn text-gray-900 dark:text-white text-2xl p-2 focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+            <div class="flex lg:hidden items-center gap-2 flex-shrink-0">
+                <button class="theme-toggle w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-moon text-lg"></i>
+                </button>
+                <button class="mobile-menu-btn text-gray-900 dark:text-white text-2xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileNavDropdown"
-            class="mobile-menu hidden absolute w-full left-0 top-full mt-2 bg-white dark:bg-[#0a101d] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl z-50 flex flex-col overflow-hidden"
-            style="max-height: calc(100vh - 120px);">
-
-            <!-- Scrollable Links -->
-            <div class="flex-1 overflow-y-auto overscroll-contain flex flex-col p-4 gap-2">
-                <a href="index.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                    1 (Ultra Luxury)</a>
-                <a href="home-2.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home
-                    2 (Storefront)</a>
-                <a href="about.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About
-                    Us</a>
-                <a href="services.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Shop by Category</a>
-                <a href="stores.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Stores</a>
-                <a href="pricing.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Pricing</a>
-                <a href="blog.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Blog</a>
-                <a href="contact.html"
-                    class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
-            </div>
-
-            <!-- Sticky Bottom Buttons -->
-            <div class="flex-shrink-0 p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#050b14]">
-                <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';"
-                    class="rtl-toggle w-full text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 py-3 rounded-xl transition-colors hover:text-primary mb-3">
-                    <i class="fa-solid fa-retweet"></i> Toggle RTL
-                </button>
-                <div class="grid grid-cols-2 gap-3 w-full">
-                    <a href="login.html"
-                        class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-center px-4 py-3 rounded-xl font-bold transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm">
-                        Login
-                    </a>
-                    <a href="signup.html"
-                        class="w-full bg-primary text-white text-center px-4 py-3 rounded-xl font-bold shadow-lg transition-colors hover:bg-yellow-600">
-                        Sign Up
-                    </a>
+        <div class="mobile-menu hidden absolute w-full left-0 top-full mt-2 bg-white dark:bg-[#0a101d] rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
+            <div class="flex flex-col p-4 gap-2">
+                <a href="index.html" class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
+                <a href="about.html" class="font-bold text-primary p-3 rounded-xl bg-primary/10">About Us</a>
+                <a href="services.html" class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Shop by Category</a>
+                <a href="stores.html" class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Stores</a>
+                <a href="blog.html" class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Blog</a>
+                <a href="contact.html" class="font-medium text-gray-800 dark:text-gray-200 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
+                <div class="h-px w-full bg-gray-200 dark:bg-gray-800 my-2"></div>
+                <div class="grid grid-cols-2 gap-3 w-full px-3 py-3">
+                    <a href="login.html" class="w-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-center px-4 py-3 rounded-xl font-bold transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">Login</a>
+                    <a href="signup.html" class="w-full bg-primary text-white text-center px-4 py-3 rounded-xl font-bold shadow-lg transition-colors hover:bg-yellow-600">Sign Up</a>
                 </div>
             </div>
-
         </div>
     </nav>
 
@@ -568,6 +499,24 @@
                 document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
             });
         });
+    </script>
+
+    <!-- Scroll-reveal animation -->
+    <script>
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
+        sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        sections.forEach(function (el) { io.observe(el); });
+    })();
     </script>
 </body>
 
