@@ -200,7 +200,7 @@
     <!-- 4. PRICING CARDS -->
     <section class="py-16 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch js-reveal-stagger">
 
                 <!-- Tier 1: Essential -->
                 <div
@@ -502,6 +502,8 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -510,7 +512,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 </body>

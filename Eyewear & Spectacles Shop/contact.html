@@ -236,7 +236,7 @@
                     <div
                         class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 p-6 sm:p-8 rounded-[2rem] flex items-center gap-4 sm:gap-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group cursor-pointer overflow-hidden">
                         <div
-                            class="w-12 h-12 sm:w-16 sm:h-16 bg-[#0F1E36]/10 dark:bg-[#25406E]/30 text-[#25406E] dark:text-gold-300 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+                            class="w-12 h-12 sm:w-16 sm:h-16 bg-[#0F1E36]/10 dark:bg-[#25406E]/30 text-[#25406E] dark:text-gold-300 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div class="w-full">
@@ -274,7 +274,7 @@
                 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-8 sm:mb-12 text-center">
                 Global
                 Flagship Studios</h2>
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 js-reveal-stagger">
                 <div
                     class="border border-gray-200 dark:border-gray-800 p-6 sm:p-8 rounded-3xl bg-gray-50 dark:bg-[#111827] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-primary group">
                     <h4
@@ -330,7 +330,7 @@
         <div class="max-w-5xl mx-auto px-4 text-center">
             <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Our Enterprise Support
                 Guarantee</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 js-reveal-stagger">
                 <div
                     class="bg-white dark:bg-[#0a101d] p-6 sm:p-8 rounded-2xl shadow-md border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1">
                     <h4 class="text-3xl sm:text-4xl font-black text-primary mb-2">2 Hours</h4>
@@ -536,6 +536,8 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -544,7 +546,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 </body>

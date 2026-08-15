@@ -193,7 +193,7 @@
                 <p class="text-gray-500 mt-2 font-medium">Try adjusting your search terms.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8" id="postsContainer">
+            <div class="grid md:grid-cols-3 gap-8 js-reveal-stagger" id="postsContainer">
             </div>
         </div>
     </section>
@@ -477,6 +477,8 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -485,7 +487,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 </body>

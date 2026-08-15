@@ -238,7 +238,7 @@
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">The foundational principles that
                     guide every frame we design and exam we perform.</p>
             </div>
-            <div class="grid md:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-4 gap-6 js-reveal-stagger">
                 <div
                     class="bg-white dark:bg-[#111827] p-8 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xl text-center">
                     <div
@@ -252,7 +252,7 @@
                 <div
                     class="bg-white dark:bg-[#111827] p-8 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xl text-center">
                     <div
-                        class="w-14 h-14 bg-[#0F1E36]/10 dark:bg-[#25406E]/30 text-[#25406E] dark:text-gold-300 rounded-2xl flex items-center justify-center text-xl mx-auto mb-6"
+                        class="w-14 h-14 bg-[#0F1E36]/10 dark:bg-[#25406E]/30 text-[#25406E] dark:text-gold-300 rounded-2xl flex items-center justify-center text-xl mx-auto mb-6">
                         <i class="fa-solid fa-microscope"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Clinical Depth</h3>
@@ -302,7 +302,7 @@
                     consultants at your service.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 js-reveal-stagger">
                 <div class="premium-card p-8 rounded-[2.5rem] text-center">
                     <div
                         class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gold-400 to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
@@ -531,6 +531,8 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -539,7 +541,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 

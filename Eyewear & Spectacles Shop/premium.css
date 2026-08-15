@@ -122,6 +122,13 @@ input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible
 .js-reveal-stagger.is-visible > *:nth-child(4) { transition-delay: .21s; }
 .js-reveal-stagger.is-visible > *:nth-child(5) { transition-delay: .27s; }
 .js-reveal-stagger.is-visible > *:nth-child(6) { transition-delay: .33s; }
+.js-reveal-stagger.is-visible > *:nth-child(7) { transition-delay: .39s; }
+.js-reveal-stagger.is-visible > *:nth-child(8) { transition-delay: .45s; }
+.js-reveal-stagger.is-visible > *:nth-child(9) { transition-delay: .51s; }
+.js-reveal-stagger.is-visible > *:nth-child(10) { transition-delay: .57s; }
+.js-reveal-stagger.is-visible > *:nth-child(11) { transition-delay: .63s; }
+.js-reveal-stagger.is-visible > *:nth-child(12) { transition-delay: .69s; }
+.js-reveal-stagger.is-visible > *:nth-child(n+13) { transition-delay: .72s; }
 
 @media (prefers-reduced-motion: reduce) {
     .js-reveal, .js-reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }

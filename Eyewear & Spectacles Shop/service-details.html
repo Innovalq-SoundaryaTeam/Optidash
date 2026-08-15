@@ -441,6 +441,8 @@ w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b bor
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -449,7 +451,7 @@ w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b bor
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 </body>

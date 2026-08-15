@@ -315,7 +315,7 @@
                     to statement sunglasses — explore our full eyewear range, curated by category.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 js-reveal-stagger">
                 <a href="services.html?cat=eyeglasses"
                     class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-10 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 hover:border-primary/40 transition-all duration-300 group overflow-hidden relative">
                     <div
@@ -340,7 +340,7 @@
                         class="absolute -left-10 -top-10 w-40 h-40 bg-[#0F1E36]/10 dark:bg-[#25406E]/15 rounded-full blur-2xl z-0 transition-transform group-hover:scale-150">
                     </div>
                     <div
-                        class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-[#25406E] dark:text-gold-300 mb-8 group-hover:scale-110 transition-transform relative z-10"
+                        class="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-md flex items-center justify-center text-2xl text-[#25406E] dark:text-gold-300 mb-8 group-hover:scale-110 transition-transform relative z-10">
                         <i class="fa-solid fa-sun"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">Sunglasses</h3>
@@ -431,7 +431,7 @@
                     Complete Lookbook</a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 js-reveal-stagger">
                 <!-- Gallery Item 1 -->
                 <div
                     class="relative group rounded-[2rem] overflow-hidden lg:row-span-2 shadow-2xl h-[400px] lg:h-auto border border-gray-200 dark:border-gray-800">
@@ -522,7 +522,7 @@
                     class="font-bold border-b-2 border-primary text-primary pb-1 hover:opacity-70 transition-opacity w-fit">View
                     All 120+ Stores &rarr;</a>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 js-reveal-stagger">
                 <div
                     class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                     <h4 class="font-black text-lg text-gray-900 dark:text-white mb-1">OptiDash Bandra</h4>
@@ -654,7 +654,7 @@
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">What our visionaries are saying
                     about their bespoke experience.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <div class="grid md:grid-cols-3 gap-8 items-stretch js-reveal-stagger">
                 <!-- Testimonial 1 -->
                 <div
                     class="flex flex-col h-full bg-white dark:bg-[#111827] shadow-xl border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] relative">
@@ -858,6 +858,8 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var sections = Array.prototype.slice.call(document.querySelectorAll('section')).slice(1);
         sections.forEach(function (el) { el.classList.add('js-reveal'); });
+        var staggerGroups = Array.prototype.slice.call(document.querySelectorAll('.js-reveal-stagger'));
+        var targets = sections.concat(staggerGroups);
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -866,7 +868,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        sections.forEach(function (el) { io.observe(el); });
+        targets.forEach(function (el) { io.observe(el); });
     })();
     </script>
 </body>
