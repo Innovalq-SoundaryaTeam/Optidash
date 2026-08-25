@@ -53,10 +53,10 @@ w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b bor
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex gap-8 items-center">
+                <div class="hidden lg:flex gap-6 items-center">
                     <div class="relative group">
                         <button
-                            class="flex items-center text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold">
+                            class="flex items-center text-gray-800 dark:text-gray-200 hover:text-primary transition py-2 font-bold whitespace-nowrap">
                             Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 opacity-70"></i>
                         </button>
                         <div
@@ -68,15 +68,15 @@ w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b bor
                         </div>
                     </div>
                     <a href="about.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">About
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">About
                         Us</a>
-                    <a href="services.html" class="text-primary font-black transition py-2">Shop by Category</a>
+                    <a href="services.html" class="text-primary font-black transition py-2 whitespace-nowrap">Shop by Category</a>
                     <a href="stores.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Stores</a>
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Stores</a>
                     <a href="blog.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Blog</a>
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Blog</a>
                     <a href="contact.html"
-                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold">Contact</a>
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary transition py-2 font-bold whitespace-nowrap">Contact</a>
 
                     <div class="h-6 w-px bg-gray-300 dark:bg-gray-700"></div>
 
@@ -95,7 +95,7 @@ w-full top-0 z-50 bg-white/95 dark:bg-[#0a101d]/95 backdrop-blur-xl border-b bor
                 </div>
 
                 <!-- Mobile Menu Buttons -->
-                <div class="flex md:hidden items-center gap-3">
+                <div class="flex lg:hidden items-center gap-3">
                     <!-- Bulletproof Mobile Theme Toggle -->
                     <button
                         onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
