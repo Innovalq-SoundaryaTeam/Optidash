@@ -423,16 +423,16 @@
                     grid.innerHTML = BLOG_ORDER.filter(s => s !== featuredSlug).map(slug => {
                         const p = BLOG_POSTS[slug];
                         return `
-                        <article class="searchable-post bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-[2.5rem] overflow-hidden group shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                            <a href="blog-details.html?post=${slug}" class="block">
-                                <div class="h-60 overflow-hidden relative border-b border-gray-100 dark:border-gray-700">
+                        <article class="searchable-post bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-[2.5rem] overflow-hidden group shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full">
+                            <a href="blog-details.html?post=${slug}" class="flex flex-col h-full">
+                                <div class="h-60 overflow-hidden relative border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
                                     <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                     <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black text-gray-900 shadow-md">${p.category.toUpperCase()}</div>
                                 </div>
-                                <div class="p-8">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors leading-snug">${p.title}</h3>
+                                <div class="p-8 flex flex-col flex-grow">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2">${p.title}</h3>
                                     <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2 font-medium">${p.excerpt}</p>
-                                    <span class="text-sm font-black text-primary uppercase tracking-widest border-b-2 border-transparent group-hover:border-primary transition-colors pb-1">Read Article</span>
+                                    <span class="mt-auto w-fit text-sm font-black text-primary uppercase tracking-widest border-b-2 border-transparent group-hover:border-primary transition-colors pb-1">Read Article</span>
                                 </div>
                             </a>
                         </article>`;
