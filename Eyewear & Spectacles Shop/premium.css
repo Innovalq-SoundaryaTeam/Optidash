@@ -134,3 +134,11 @@ input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible
     .js-reveal, .js-reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
+/* ---- Typography hierarchy: headings capped at 600, subheadings 400–550 ---- */
+h1, h2, h3 {
+    font-weight: 600 !important;
+}
+h4, h5, h6 {
+    font-weight: 500 !important;
+}
+
