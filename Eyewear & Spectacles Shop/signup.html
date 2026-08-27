@@ -50,6 +50,12 @@
 
     <!-- Floating UI Controls (Scaled for Mobile) -->
     <button
+        onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';"
+        class="absolute top-4 right-16 sm:top-6 sm:right-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0a101d] text-gray-900 dark:text-white flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-800 transition-transform hover:scale-110 z-50"
+        title="Toggle RTL">
+        <i class="fa-solid fa-retweet text-sm sm:text-lg"></i>
+    </button>
+    <button
         onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');"
         class="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0a101d] text-gray-900 dark:text-white flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-800 transition-transform hover:scale-110 z-50">
         <i class="fa-solid fa-moon text-sm sm:text-lg"></i>
